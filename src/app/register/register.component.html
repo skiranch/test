@@ -1,0 +1,10 @@
+<form [formGroup]="regForm" (ngSubmit)="doReg($event)">
+    <div>EMAIL<input formControlName="email" type="email" placeholder="Email"></div><br>
+    <div>Username <input formControlName="username" type="text" placeholder="Username"></div><br>
+    <div>Password<input formControlName="password" type="password" placeholder="Password"></div><br>
+    <div>Name<input formControlName="name" type="text" placeholder="Name"></div><br>
+    <div>Last Name<input formControlName="lname" type="text" placeholder="Last Name"></div><br>
+    <div>Date of Birth<input formControlName="date" type="date" placeholder="Date of Birth"></div><br>
+    
+  <button type="submit">SUBMIT</button>
+</form>

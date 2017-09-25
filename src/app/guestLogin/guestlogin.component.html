@@ -1,0 +1,7 @@
+<form [formGroup]="guestloginForm" (ngSubmit)="guestLogin($event)">
+  <div>EMAIL<input formControlName="email" type="email" placeholder="Email"></div><br>
+  <div>Name<input formControlName="name" type="text" placeholder="Name"></div><br>
+  <div>Last Name<input formControlName="lname" type="text" placeholder="Last Name"></div><br>
+  <div>Phone Number<input formControlName="number" type="number" placeholder="phone"></div><br>
+  <button type="submit">MOVE IN</button>
+</form>
