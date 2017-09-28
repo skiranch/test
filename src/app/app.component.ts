@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
+
 @Component({
   selector: 'app-root',
   template: `<h1>Routing Application</h1>
@@ -10,5 +11,6 @@ import {ReactiveFormsModule} from '@angular/forms';
   <li><a [routerLink] = "['/guestlogin']">GuestLogin</a></li>
 </ul>
 <router-outlet></router-outlet>
+
 `})
 export class AppComponent { }

@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder, Validators,RequiredValidator, ReactiveFormsModule, Form } from '@angular/forms'
 import {NgForm, FormsModule} from '@angular/forms';
+import { dataService } from "app/dataservice.service";
 
 @Component({
     selector: 'registration',
@@ -11,7 +12,8 @@ import {NgForm, FormsModule} from '@angular/forms';
 ]
 })
 
-export class register{
+export class register implements OnInit{
+    
     public regForm = this.reg.group({
         email: ["", Validators.required],
         username: ["", Validators.required],
@@ -20,9 +22,20 @@ export class register{
         lname:[""],
         date: ["", Validators.required],
       });
-      constructor(public reg: FormBuilder) {}
+      constructor(public reg: FormBuilder, private dataservice : dataService) {}
       doReg(event) {
         console.log(event);
         console.log(this.regForm.value);
       }
+    
+    ngOnInit(){
+        this.regForm.valueChanges.subscribe(
+         (formData)=>{
+             this.dataservice.onDataChangeinregForm(formData.regForm)
+
+         },
+         error => console.error("couldn't send data to service", error)
+        ) ;
+     }
+ 
     }
